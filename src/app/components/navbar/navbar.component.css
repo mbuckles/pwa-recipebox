@@ -1,0 +1,52 @@
+/* body {
+  background: #3f51b5;
+} */
+.container {
+  display: flex;
+  background: #3f51b5;
+  width: 100%;
+  height: 65px;
+}
+.navbar{
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #3f51b5;
+  text-align: center;
+  font-family: 'Acme', sans-serif;
+  color: white;
+  margin-top: auto;
+  /* margin-left: 28px; */
+}
+/* .mat-toolbar {
+  background: #3f51b5;
+  color: #fff;
+} */
+h1 {
+  font-family: 'Acme', sans-serif;
+  color: white;
+}
+a#navbar {
+  /* margin-left: 500px; */
+  font-size: 2.5em;
+   text-decoration:  none;
+   font-family: 'Acme', sans-serif;
+  }
+  a:link {
+      color: red;
+  }
+
+  /* visited link */
+  a:visited {
+      color: white;
+  }
+
+  /* mouse over link */
+  a:hover {
+      color: hotpink;
+  }
+
+  /* selected link */
+  a:active {
+      color: blue;
+  }

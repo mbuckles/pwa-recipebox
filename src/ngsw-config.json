@@ -21,7 +21,31 @@
     "resources": {
       "files": [
         "/assets/**"
+      ],
+      "urls": [
+        "http://fonts.googleapis.com/**",
+        "https://fonts.googleapis.com/css?family=Acme|Bungee",
+        "https://use.fontawesome.com/releases/v5.0.8/js/all.js"
       ]
     }
-  }]
+   }],
+   "dataGroups": [
+     {
+       "name": "task-users-api",
+       "urls": ["/items"],
+       "cacheConfig": {
+         "strategy": "freshness",
+         "maxSize": 20,
+         "maxAge": "1h",
+         "timeout": "5s"
+       }
+      }, {
+         "name": "api-performance",
+         "urls": ["/items"],
+         "cacheConfig": {
+           "maxSize": 20,
+           "maxAge": "4h",
+           "strategy": "performance"
+         }
+        }]
 }
