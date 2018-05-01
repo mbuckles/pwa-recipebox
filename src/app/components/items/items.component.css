@@ -15,10 +15,11 @@ width: 100%;
 }
 mat-card {
 box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-width: 90%;
-margin-top: 15px;
+width:55%;
+/* margin-top: 15px;
 margin-left: auto;
-margin-right: auto;
+margin-right: auto; */
+margin: 15px auto;
 border-radius: 5px;
 }
 .example-full-width {
@@ -60,4 +61,8 @@ overflow: hidden;
 .results{
 padding: 8px;
 margin-bottom: 12px;
+}
+.recipe {
+  text-align: center;
+  flex: 1;
 }

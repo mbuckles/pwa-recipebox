@@ -1,49 +1,51 @@
 <div class="container">
+  <div class="top">
+    <mat-card>
+      <div class="recipe">
+        <img src="./assets/img/recipe.jpg" alt="recipe">
+      </div>
+      <div *ngIf="items?.length > 0;else noItems">
+        <ul *ngFor="let item of items" class="collection">
+          <li class="collection-item">
+            <strong>{{item.title}}: </strong> {{item.description}}
+            <a href="#" class="secondary-content">
+              <i (click)="editItem($event, item)" class="fa fa-pencil"></i>
+              <i *ngIf="editState && itemToEdit.id == item.id" (click)="clearState()" class="fa fa-compress"></i>
+            </a>
 
-<div class="top">
+            <!-- this only activates if the pencil is clicked -->
 
-  <mat-card>
-    <div *ngIf="items?.length > 0;else noItems">
-      <ul *ngFor="let item of items" class="collection">
-        <li class="collection-item"><strong>{{item.title}}: </strong> {{item.description}}
-          <a href="#" class="secondary-content">
-            <i (click)="editItem($event, item)" class="fa fa-pencil"></i>
-            <i *ngIf="editState && itemToEdit.id == item.id" (click)="clearState()" class="fa fa-compress"></i>
-          </a>
-
-          <!-- this only activates if the pencil is clicked -->
-
-          <div *ngIf="editState && itemToEdit.id == item.id">
-            <form (ngSubmit)="updateItem(item)">
-              <div class="row">
-                <div class="input-field">
-                  <mat-form-field>
-                    <input matInput placeholder="Add Title" [(ngModel)]="item.title" name="title">
-                  </mat-form-field>
+            <div *ngIf="editState && itemToEdit.id == item.id">
+              <form (ngSubmit)="updateItem(item)">
+                <div class="row">
+                  <div class="input-field">
+                    <mat-form-field>
+                      <input matInput placeholder="Add Title" [(ngModel)]="item.title" name="title">
+                    </mat-form-field>
+                  </div>
+                  <div class="input-field">
+                    <mat-form-field>
+                      <textarea matInput placeholder="Add Description" [(ngModel)]="item.description" name="description"></textarea>
+                    </mat-form-field>
+                  </div>
+                  <!-- <input type="submit" value="Update Item" class="searchButton2"> -->
+                  <button mat-raised-button (click)="updateItem(item)" class="searchButton2">Update Item</button>
+                  <button mat-raised-button (click)="deleteItem($event, item)" class="searchButton">Delete Item</button>
                 </div>
-                <div class="input-field">
-                  <mat-form-field>
-                    <textarea matInput placeholder="Add Description" [(ngModel)]="item.description" name="description"></textarea>
-                  </mat-form-field>
-                </div>
-                <!-- <input type="submit" value="Update Item" class="searchButton2"> -->
-                <button mat-raised-button (click)="updateItem(item)" class="searchButton2">Update Item</button>
-                <button mat-raised-button (click)="deleteItem($event, item)" class="searchButton">Delete Item</button>
-              </div>
-            </form>
-          </div>
+              </form>
+            </div>
 
-        </li>
-      </ul>
+          </li>
+        </ul>
 
-    </div>
-  </mat-card>
+      </div>
+    </mat-card>
 
 
-  <ng-template #noItems>
-    <hr>
-    <h5>There are no items to list</h5>
-  </ng-template>
+    <ng-template #noItems>
+      <hr>
+      <h5>There are no items to list</h5>
+    </ng-template>
 
-</div>
+  </div>
 </div>
