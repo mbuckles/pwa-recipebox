@@ -5,10 +5,10 @@
 /dist-server
 /tmp
 /out-tsc
+/src/environments/*.ts
 
 # dependencies
 /node_modules
-/environments/*.ts
 # IDEs and editors
 /.idea
 .project
